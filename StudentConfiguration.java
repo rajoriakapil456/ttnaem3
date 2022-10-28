@@ -10,12 +10,12 @@ public @interface StudentConfiguration {
 	@AttributeDefinition(
 			name = "Number", required = true,
 			description = "Number of students allowed in the class")
-	        boolean isClassLimitReached();
+	        int no_of_students_allowed();
 
 
 	@AttributeDefinition(
 			name = "Marks", required = true,
 			description = "Passing marks required")
-	        int getPassingMarks();
+	        double marks_required_to_pass();
 
 }
