@@ -1,5 +1,8 @@
 package com.mysite.core.services;
 
+import java.util.ArrayList;
+import com.mysite.core.services.impl.StudentImpl;
+
 //import com.mysite.core.services.impl.StudentImpl;
 
 public interface Student {
@@ -8,4 +11,6 @@ public interface Student {
 	boolean isStudentPassed(int id);
 	String getStudent(int id);
 	void getAllStudents();
+	boolean isClassLimitReached(ArrayList<StudentImpl> l);
+	double getPassingMarks();
 }
