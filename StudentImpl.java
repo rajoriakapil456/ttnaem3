@@ -19,8 +19,8 @@ public class StudentImpl implements Student {
    
     Scanner sc = new Scanner(System.in);
     
-	boolean b;
-	int m;
+	int b;
+	double m;
 	
 	private String sname;
 	private int sid;
@@ -69,8 +69,8 @@ public class StudentImpl implements Student {
 
 	@Activate
 	public void activate(StudentConfiguration config) {
-		b = config.isClassLimitReached();
-		m = config.getPassingMarks();
+		b = config.no_of_students_allowed();
+		m = config.marks_required_to_pass();
 	}
 
 
@@ -166,4 +166,24 @@ public class StudentImpl implements Student {
 		}
 	}
 
+
+	@Override
+	public boolean isClassLimitReached(ArrayList<StudentImpl> l) {
+		if(l.size()>b)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
+	@Override
+	public double getPassingMarks() {
+		
+		return m;
+	}
+	
 }
